@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.audio-recorder {
+    background-color: transparent !important;
+    box-shadow: 0 0px 0px !important;
+    border-radius: 0px !important;
+    /* box-sizing: border-box !important; */
+    width: auto;
+    display: flex;
+    align-items: center;
+    transition: all .2s ease-in;
+    position: absolute;
+    top: 0;
+    left: 12px;
+    bottom: -510px;
+}
