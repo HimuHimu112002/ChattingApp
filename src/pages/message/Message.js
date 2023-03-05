@@ -5,7 +5,6 @@ import Sidebar from '../../components/Sidebar'
 import MyGroups from '../../components/MyGroups'
 import Friends from '../../components/Friends'
 import { IoIosVideocam } from 'react-icons/io';
-import { AiTwotoneAudio } from 'react-icons/ai';
 import { MdInsertPhoto } from 'react-icons/md';
 import { BiSend } from 'react-icons/bi';
 import { BsEmojiExpressionless } from 'react-icons/bs';
@@ -280,11 +279,8 @@ return (
               ))
             )
             : 
-            data.uid == activeName && activeName.AdminId 
-            
-            ? 
-            
-            
+            data.uid == activeName && activeName.AdminId ||  Groupmember.includes(activeName.id+ data.uid ) ? 
+        
             Groupsmssend.map((item)=>(
 
               item.whosendid == data.uid 
@@ -315,7 +311,8 @@ return (
           </div>
 
           <div>
-            <div className='w-full text-center py-6 flex justify-around'>
+          {activeName.status === "single"&&
+          <div className='w-full text-center py-6 flex justify-around'>
               
               <div className='relative ml-3'>
               {/* audio section */}
@@ -329,12 +326,13 @@ return (
               }
               {/* audio section */}
 
+
               {/* input section */}
-                {data.uid == activeName && activeName.AdminId &&
+                
                 <input onChange={handleSmsInput} value={sms} className='relative sm:w-auto lg:w-[300px] px-4 py-2 bg-[#f1f1f1] text-black border-none outline-none rounded-full ml-5'></input>
-                }
+                
                 <AiFillCamera onClick={()=>setcheck(!check)} className='absolute top-2.5 right-16 text-black cursor-pointer'></AiFillCamera> 
-              
+                
                 <BsEmojiExpressionless onClick={()=>setemoji(!emoji)} className='absolute top-2.5 right-10 text-black cursor-pointer'></BsEmojiExpressionless>
                 {emoji && <div className="absolute bottom-12 left-4"><EmojiPicker onEmojiClick={(emoji)=>handleemojisend(emoji)}/></div>}
                 
@@ -355,7 +353,9 @@ return (
                 <IoIosVideocam className='absolute bottom-9 left-2 text-black cursor-pointer'></IoIosVideocam>
               <button onClick={handleSmsSend} className='bg-heading text-white px-6 py-1 rounded-md hover:bg-green-600 duration-500 text-xl'><BiSend></BiSend></button>
               
-            </div>
+            </div> 
+            
+            }
           </div>
         </div>
         </div>
@@ -384,3 +384,6 @@ return (
 }
 
 export default Message
+
+
+// {activeName.status == "single"?: data.uid == activeName && activeName.AdminId ||  Groupmember.includes(activeName.id+ data.uid )  &&

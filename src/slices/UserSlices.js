@@ -6,7 +6,7 @@ export const userSlice = createSlice({
     // local store data store korar jonnno
     //localStorage.getItem("group")?JSON.parse(localStorage.getItem("group")):
     userInfo: localStorage.getItem("userInfo") ? JSON.parse(localStorage.getItem("userInfo")):null,
-    // gr: localStorage.getItem("gr") ? JSON.parse(localStorage.getItem("gr")):null,
+    gr: localStorage.getItem("gr") ? JSON.parse(localStorage.getItem("gr")):null,
     active:localStorage.getItem("active")?JSON.parse(localStorage.getItem("active")):null,
     // group:null,
     countnoti:localStorage.getItem("countnoti")?JSON.parse(localStorage.getItem("countnoti")):null,
@@ -23,6 +23,10 @@ export const userSlice = createSlice({
     },
     counts: (state,action)=>{
       state.countnoti = action.payload
+    },
+
+    groupr: (state,action)=>{
+      state.gr = action.payload
     },
     
   },
