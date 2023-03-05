@@ -17,6 +17,8 @@ import 'react-html5-camera-photo/build/css/index.css';
 import { getStorage, uploadBytes, ref as storageref, uploadBytesResumable, getDownloadURL, uploadString } from "firebase/storage";
 import EmojiPicker from 'emoji-picker-react';
 import GroupList from '../../components/GroupList'
+import ScrollToBottom from 'react-scroll-to-bottom';
+
 
 const Message = () => {
   const storage = getStorage();
@@ -66,6 +68,7 @@ const Message = () => {
   let handleSmsInput = (item)=>{
     setsms(item.target.value)
     setsmserr("")
+
   }
 
   let handleSmsSend = ()=>{
@@ -198,6 +201,39 @@ const Message = () => {
     setsms(sms + emoji.emoji)
   }
 
+
+  // enter press
+  let handleEnterPress= (e)=>{
+    //console.log(e.key)
+    if(e.key == "Enter"){
+      if(!sms){
+        setsmserr("Please write text somthing .")
+      }else if(activeName.status == "single"){
+        set(push(ref(db, "singlesms")),{
+          whosendid: data.uid,
+          whosendname: data.displayName,
+          whorechiveid: activeName.id,
+          whorechivename: activeName.name,
+          msg:sms,
+        }).then(()=>{
+          setsms("")
+          setemoji("")
+        })
+      }else{
+        set(push(ref(db, "groupsms")),{
+          whosendid: data.uid,
+          whosendname: data.displayName,
+          whorechiveid: activeName.id,
+          whorechivename: activeName.name,
+          adminid: activeName.AdminId,
+          groupmsg:sms,
+        }).then(()=>{
+          setsms("")
+          setemoji("")
+        })
+      }
+    }
+  }
  
 return (
     <div className='flex justify-items-center'>
@@ -229,7 +265,7 @@ return (
                         
          
 
-          <div className='overflow-y-scroll h-[400px] border-b pb-2'>
+          <ScrollToBottom className='overflow-y-scroll h-[400px] border-b pb-2'>
 
             {activeName && activeName.status == "single" ?(
               smssend.map((item)=>(
@@ -308,7 +344,7 @@ return (
              <h1>Not a member</h1>
             }           
 
-          </div>
+          </ScrollToBottom>
 
           <div>
           {activeName.status === "single"&&
@@ -329,7 +365,7 @@ return (
 
               {/* input section */}
                 
-                <input onChange={handleSmsInput} value={sms} className='relative sm:w-auto lg:w-[300px] px-4 py-2 bg-[#f1f1f1] text-black border-none outline-none rounded-full ml-5'></input>
+                <input onKeyUp={handleEnterPress} onChange={handleSmsInput} value={sms} className='relative sm:w-auto lg:w-[300px] px-4 py-2 bg-[#f1f1f1] text-black border-none outline-none rounded-full ml-5'></input>
                 
                 <AiFillCamera onClick={()=>setcheck(!check)} className='absolute top-2.5 right-16 text-black cursor-pointer'></AiFillCamera> 
                 
