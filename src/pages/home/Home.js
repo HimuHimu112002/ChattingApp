@@ -73,7 +73,7 @@ const Home = () => {
 
         </>
         : <div className='bg-gradient-to-r from-purple-500 to-pink-500 w-full h-screen flex justify-center items-center text-center'>
-            <h1 className='text-white text-5xl font-extrabold'>Please Verified Your Email.</h1>
+            <h1 className='text-white text-5xl font-extrabold'>Please Verified Your Email Then Reload Your's Browser Window.</h1>
           </div>
         }
         

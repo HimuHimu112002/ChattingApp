@@ -3,9 +3,9 @@ import { BsThreeDotsVertical } from 'react-icons/bs';
 import { getDatabase, ref, onValue, set, remove, push} from "firebase/database";
 import { useSelector, useDispatch } from 'react-redux';
 import Search from './Search';
-// import activeChat from '../slices/ActiveChatSlice'
 import { singleSms } from '../slices/UserSlices';
-//import activeChat from '../activeSingleSms/ActiveChatSlice'
+import Swal from 'sweetalert2'
+
 const Friends = () => {
     const db = getDatabase();
     let dispatch = useDispatch()
@@ -60,7 +60,27 @@ const Friends = () => {
     // handle Friend Unfriend =======================>
 
     let handleUnFriend = ((item)=>{
-        remove(ref(db, "FriendAccept/"+ item.key))
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "Unfriend yours friends",
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonColor: '#162030',
+            confirmButtonBorder: 'border-none',
+            confirmButtonMarginTop: '10px',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!',
+            padding:"70px",
+            }).then((result) => {
+            if (result.isConfirmed) {
+                remove(ref(db, "FriendAccept/"+ item.key))     
+                Swal.fire(
+                'Deleted!',
+                'Your post has been deleted.',
+                'success'
+                )
+            }
+            })
     
     })
 

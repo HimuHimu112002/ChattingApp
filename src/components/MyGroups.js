@@ -8,7 +8,7 @@ import { groupr } from '../slices/UserSlices';
 import { groupsms } from '../slices/UserSlices';
 import Search from './Search';
 import { singleSms } from '../slices/UserSlices';
-
+import Swal from 'sweetalert2'
 
 const MyGroups = () => {
     const db = getDatabase();
@@ -39,8 +39,29 @@ const MyGroups = () => {
 
      // my Group List end ===========
 
-    let handleGroupDelete = (item)=>{    
-        remove(ref(db, "Group/"+ item.key))        
+    let handleGroupDelete = (item)=>{
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "Deleted this group",
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonColor: '#162030',
+            confirmButtonBorder: 'border-none',
+            confirmButtonMarginTop: '10px',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!',
+            padding:"70px",
+            }).then((result) => {
+            if (result.isConfirmed) {
+                remove(ref(db, "Group/"+ item.key))     
+                Swal.fire(
+                'Deleted!',
+                'Your post has been deleted.',
+                'success'
+                )
+            }
+            })  
+           
     }
      
     let handleGroupRequest = (item)=>{    

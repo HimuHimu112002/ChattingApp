@@ -3,6 +3,8 @@ import { BsThreeDotsVertical } from 'react-icons/bs';
 import { getDatabase, ref, onValue, set, push, remove } from "firebase/database";
 import { useSelector } from 'react-redux';
 import Search from './Search';
+import Swal from 'sweetalert2'
+
 const FriendRequest = () => {
     const db = getDatabase();
 
@@ -46,8 +48,29 @@ const FriendRequest = () => {
 
     // handle Friend Request Delete =======================>
     let handledelete = (item)=>{
-        remove(ref(db, 'Friendrequest/' + item.id))
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "Deleted this friend requist",
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonColor: '#162030',
+            confirmButtonBorder: 'border-none',
+            confirmButtonMarginTop: '10px',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!',
+            padding:"70px",
+            }).then((result) => {
+            if (result.isConfirmed) {
+                remove(ref(db, 'Friendrequest/' + item.id))
+                Swal.fire(
+                'Deleted!',
+                'Your post has been deleted.',
+                'success'
+                )
+            }
+            })
         
+
     }
 
   return (

@@ -3,7 +3,7 @@ import Sidebar from '../../components/Sidebar'
 import { useSelector,useDispatch } from 'react-redux';
 import { getDatabase, ref, onValue } from "firebase/database";
 import { counts } from '../../slices/UserSlices'
-
+import { IoIosNotifications } from 'react-icons/io';
 const Notifications = () => {
 
   let db = getDatabase();
@@ -39,7 +39,11 @@ const Notifications = () => {
        
         <div className='w-full mt-5'>
         {notification.map((item)=>(
-          <p className='bg-[#e2dfdf] inline-block w-[900px] mt-2 px-6 mx-5 py-4 font-dm font-semibold rounded-md border border-solid border-[#bdb9b9]'>{item.notification}</p>
+          <div className='flex bg-[#e2dfdf] inline-block w-[900px] mt-2 px-6 mx-5 py-4  rounded-md border border-solid border-[#bdb9b9]'>
+            <p className='text-3xl font-dm font-semibold mt-1 mr-5'><IoIosNotifications></IoIosNotifications></p>
+            <p className='text-2xl font-dm font-semibold'>{item.notification}</p>
+
+          </div>
         ))}
         </div>      
           
