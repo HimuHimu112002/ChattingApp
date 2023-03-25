@@ -1,4 +1,4 @@
-import React, { useEffect,useState } from 'react'
+import React, {useState } from 'react'
 import { AiOutlineHome, AiOutlineSetting, AiOutlineMessage } from 'react-icons/ai';
 import { IoMdNotificationsOutline } from 'react-icons/io';
 import { MdCloudUpload } from 'react-icons/md';

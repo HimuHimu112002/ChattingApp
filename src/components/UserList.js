@@ -11,7 +11,7 @@ const UserList = () => {
     let data = useSelector((state)=> state.userLoginInfo.userInfo);
     let [userdata, setUserData] = useState([])
     let [SearchArray, setSearchArray] = useState([])
-
+ 
     let [FriendrequestList, setFriendrequestList] = useState([])
     let [FriendList, setFriendList] = useState([])
     let [BlockBack, setBlockBack] = useState([])
@@ -126,7 +126,7 @@ const UserList = () => {
             (SearchArray.map((item)=>(
             <div className='flex gap-x-5 items-center border-b border-solid border-loginbtn pb-3.5'>
             <div>
-                <img className='w-[70px] h-[70px] rounded-full mt-4' src={data.photoURL.auth.currentUser.uid}></img>
+                <img className='w-[70px] h-[70px] rounded-full mt-4' src={data.photoURL}></img>
             </div>
             <div className='text-left'>
                 <h4 className='font-popin font-semibold text-sm text-black'>{item.username}</h4>

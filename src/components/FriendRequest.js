@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { BsThreeDotsVertical } from 'react-icons/bs';
 import { getDatabase, ref, onValue, set, push, remove } from "firebase/database";
 import { useSelector } from 'react-redux';
-import Search from './Search';
 import Swal from 'sweetalert2'
 
 const FriendRequest = () => {
@@ -19,6 +18,7 @@ const FriendRequest = () => {
         let friendRequestarry = [];
         snapshot.forEach((item)=>{
             if(item.val().rechiverId == data.uid){
+                // akhane je friend requist rechived korbe tar rechiverId and tar data.uid
                 friendRequestarry.push({...item.val(), id:item.key})
                 // je friend request pathaise tar all information asbe and tar key tao asbe
             }
@@ -77,7 +77,7 @@ const FriendRequest = () => {
     <div className='shadow-lg w-full relative border mt-3 px-5 py-3 rounded-lg h-[462px] overflow-y-scroll'>
         <h3 className='text-xl font-semibold font-popin text-black'>Friend  Request</h3>
         <BsThreeDotsVertical className='absolute top-[15px] right-2'></BsThreeDotsVertical>
-        <Search></Search>
+        
         {FriendrequestList.map((item)=>(
             <div className='flex gap-x-5 items-center border-b border-solid border-loginbtn pb-3.5'>
             <div>

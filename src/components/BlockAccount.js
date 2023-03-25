@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { BsThreeDotsVertical } from 'react-icons/bs';
-import { BiSearch } from 'react-icons/bi';
 import { getDatabase, ref, onValue, remove, set, push } from "firebase/database";
 import { useSelector } from 'react-redux';
+
 const BlockAccount = () => {
     const db = getDatabase();
     let data = useSelector((state)=> state.userLoginInfo.userInfo);
     const [block, setblock] = useState([])
-    let [SearchArray, setSearchArray] = useState([])
 
     // Friends block section ui te show START CODE ===============
     useEffect(()=>{
@@ -54,42 +53,16 @@ const BlockAccount = () => {
     })
     // handle unblock section END START =================
 
-    // Search section END START =================
-    let handleUserListSearch=(e)=>{
-        let SearchFilterArray = []
-        if (e.target.value.length == 0) {
-            setSearchArray([])
-            // array value faka thakle sokol userlist data dekhabe 
-        }else{
-            block.filter((item)=>{
-                if(item.username.toLowerCase().includes(e.target.value.toLowerCase())){
-                    SearchFilterArray.push(item)
-                    setSearchArray(SearchFilterArray)
-                }
-            })
-        }
-    }
-
-    // Search section END END =================
 
   return (
     <div className='shadow-lg w-full relative border mt-3 px-5 py-3 rounded-lg h-[459px] overflow-y-scroll'>
         <h3 className='text-xl font-semibold font-popin text-black'>Block Account</h3>
         <BsThreeDotsVertical className='absolute top-[15px] right-2'></BsThreeDotsVertical>
-        {/* Search Section */}
-
-        <div className='relative'>
-            <input onChange={handleUserListSearch} className='mt-4 drop-shadow-md px-9 py-3 outline-0 rounded-lg w-full' type="text" placeholder='Search'></input>
-            <BiSearch className='absolute top-[33px] left-3'></BiSearch>
-            <BsThreeDotsVertical className='absolute top-[33px] right-3'></BsThreeDotsVertical>
-        </div>
-
-        {/* Search Section */}
       
         {block.map(item=>(
             <div className='flex gap-x-5 items-center border-b border-solid border-loginbtn pb-3.5'>
             <div>
-                <img className='w-[70px] h-[70px] rounded-full mt-4' src={data.photoURL}></img>
+                <img className='w-[70px] h-[70px] rounded-full mt-4' src={data.photoURL}/>
             </div>
 
             <div className='text-left'>

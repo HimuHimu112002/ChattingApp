@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { getDatabase, ref, onValue, set, push, remove } from "firebase/database";
+import { getDatabase, ref, onValue, set, push } from "firebase/database";
 import { BsThreeDotsVertical } from 'react-icons/bs';
 import { useSelector, useDispatch } from 'react-redux';
 import {Link } from "react-router-dom";
-import Search from './Search'
 import { singleSms } from '../slices/UserSlices';
 
 const GroupList = () => {
@@ -12,7 +11,7 @@ const GroupList = () => {
 
     let data = useSelector((state)=> state.userLoginInfo.userInfo);
     let [GroupList, setGroupList] = useState([])
-    let [joinmember, setjoinmember] = useState([])
+
 
     // Group List show start ===========
 
@@ -53,7 +52,7 @@ const GroupList = () => {
     let handlegroupsms = (item)=>{
         console.log(item)
         dispatch(singleSms({status:"group", AdminId:item.AdminId, name:item.GroupName, GroupId:item.key,}))
-        // localStorage.setItem("active", JSON.stringify({status:"groupSms", id:item.senderId, name:item.senderName}))
+       
     }
     // group sms end
     
@@ -63,7 +62,7 @@ const GroupList = () => {
             <h3 className='text-xl font-semibold font-popin text-black'>Groups List</h3>
             <h1 className='mr-4 bg-heading px-4 py-1 text-white rounded-sm font-popin font-medium text-sm'><Link to="/groupCreate">Create a group</Link> </h1>
         </div>
-        <Search></Search>
+
         <BsThreeDotsVertical className='absolute top-[15px] right-2'></BsThreeDotsVertical>
 
 

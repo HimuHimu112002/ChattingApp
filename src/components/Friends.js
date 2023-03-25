@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { BsThreeDotsVertical } from 'react-icons/bs';
 import { getDatabase, ref, onValue, set, remove, push} from "firebase/database";
 import { useSelector, useDispatch } from 'react-redux';
-import Search from './Search';
 import { singleSms } from '../slices/UserSlices';
 import Swal from 'sweetalert2'
 
@@ -99,7 +98,7 @@ const Friends = () => {
     <div className='shadow-lg w-full relative border mt-3 px-5 py-3 rounded-lg h-[431px] overflow-y-scroll'>
         <h3 className='text-xl font-semibold font-popin text-black'>Friends</h3>
         <BsThreeDotsVertical className='absolute top-[15px] right-2'></BsThreeDotsVertical>
-            <Search></Search>
+
             {friend.map(item=>(
             <div onClick={()=>handleSingleSms(item)} className='flex gap-x-5 items-center border-b border-solid border-loginbtn pb-3.5 cursor-pointer'>
                 <div>

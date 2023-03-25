@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import {Link} from "react-router-dom";
 import {useSelector} from "react-redux"
 import { getDatabase, ref, onValue, set, push, remove } from "firebase/database";
+
 function GroupCreate() {
     const db = getDatabase();
     

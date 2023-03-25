@@ -6,7 +6,6 @@ import {Link } from "react-router-dom";
 import  userLoginInfo  from '../slices/UserSlices';
 import { groupr } from '../slices/UserSlices';
 import { groupsms } from '../slices/UserSlices';
-import Search from './Search';
 import { singleSms } from '../slices/UserSlices';
 import Swal from 'sweetalert2'
 
@@ -108,7 +107,6 @@ const MyGroups = () => {
         <div className='mx-auto mt-2'>
             <button onClick={back} className='font-popin font-bold text-white text-sm bg-heading px-5 py-1 rounded-md mr-2'>Back</button>
         </div>
-        <Search></Search>
                         
         {show ?
                        
