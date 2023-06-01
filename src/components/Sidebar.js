@@ -9,11 +9,14 @@ import { Link, useNavigate } from 'react-router-dom';
 import { LineWave } from  'react-loader-spinner'
 import { useDispatch, useSelector } from 'react-redux';
 import { userLoginInfo } from '../slices/UserSlices';
+import { profile } from '../slices/UserSlices';
 import Cropper from "react-cropper";
 import "cropperjs/dist/cropper.css";
 import { getStorage, ref as sto, uploadString, getDownloadURL } from "firebase/storage";
+import { getDatabase, ref, onValue, set, push } from "firebase/database";
 
 const Sidebar = ({active}) => {
+  const db = getDatabase();
   const auth = getAuth();
   const storage = getStorage();
   let navigatee = useNavigate();

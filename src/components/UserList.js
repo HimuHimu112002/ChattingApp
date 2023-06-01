@@ -7,7 +7,6 @@ import { useSelector } from 'react-redux';
 
 const UserList = () => {
     const db = getDatabase();
-
     let data = useSelector((state)=> state.userLoginInfo.userInfo);
     let [userdata, setUserData] = useState([])
     let [SearchArray, setSearchArray] = useState([])
@@ -15,13 +14,14 @@ const UserList = () => {
     let [FriendrequestList, setFriendrequestList] = useState([])
     let [FriendList, setFriendList] = useState([])
     let [BlockBack, setBlockBack] = useState([])
-    // let [Blockshow, setBlockshow] = useState([])
+
     // Current user friend list show korebena START CODE =====================>
 
     useEffect(()=>{
         const userRef = ref(db, 'user/');
         onValue(userRef, (snapshot) => {
         let arry = [];
+
         snapshot.forEach((item)=>{
             // je login thakbe tar key mile jabe so login user er list show korbena
             // login user sara sokoler information show korbe
@@ -126,7 +126,7 @@ const UserList = () => {
             (SearchArray.map((item)=>(
             <div className='flex gap-x-5 items-center border-b border-solid border-loginbtn pb-3.5'>
             <div>
-                <img className='w-[70px] h-[70px] rounded-full mt-4' src={data.photoURL}></img>
+            <img className='w-[70px] h-[70px] rounded-full mt-4' src={data.photoURL}></img>
             </div>
             <div className='text-left'>
                 <h4 className='font-popin font-semibold text-sm text-black'>{item.username}</h4>
@@ -149,7 +149,9 @@ const UserList = () => {
         (userdata.map((item)=>(
             <div className='flex gap-x-5 items-center border-b border-solid border-loginbtn pb-3.5'>
             <div>
-                <img className='w-[70px] h-[70px] rounded-full mt-4' src={data.photoURL}></img>
+            
+            <img className='w-[70px] h-[70px] rounded-full mt-4' src={data.photoURL}></img>
+            
             </div>
             <div className='text-left'>
                 <h4 className='font-popin font-semibold text-sm text-black'>{item.username}</h4>

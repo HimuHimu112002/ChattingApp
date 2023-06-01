@@ -244,9 +244,9 @@ return (
 
         <div className='grid grid-cols-2 sm:grid-cols-1 md:grid-cols-2'>
 
-        <div className='w-[400px] h-2/4 overflow-y-scroll pl-2'>
-        <GroupList></GroupList>
-          <MyGroups></MyGroups>
+        <div className='w-[400px] h-2/4 mx-4 pl-2'>
+          {/* <GroupList></GroupList> */}
+          {/* <MyGroups></MyGroups> */}
           <Friends></Friends>
         </div>
 

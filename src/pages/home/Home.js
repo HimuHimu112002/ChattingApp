@@ -55,18 +55,22 @@ const Home = () => {
         <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-x-4'>
 
         <div className='w-full ml-3'>
-          <Search></Search>
-          <GroupList></GroupList>
+          {/* <Search></Search> */}
+          {/* <GroupList></GroupList> */}
           <FriendRequest></FriendRequest>
         </div>
 
-        <div className='w-full mr-2'>
+        <div className='w-full mx-4'>
           <Friends></Friends>
-          <MyGroups></MyGroups>
+          {/* <MyGroups></MyGroups> */}
         </div>
 
-        <div className='w-full'>
+        <div className='w-full mx-4'>
           <UserList></UserList>
+          {/* <BlockAccount></BlockAccount> */}
+        </div>
+        <div className='w-full mx-4'>
+          {/* <UserList></UserList> */}
           <BlockAccount></BlockAccount>
         </div>
         </div>

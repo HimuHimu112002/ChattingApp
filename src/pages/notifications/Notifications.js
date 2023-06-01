@@ -28,27 +28,44 @@ const Notifications = () => {
       localStorage.setItem("countnoti",JSON.stringify(friendRequestarry.length))
     });
   },[])
+
   dispatch(counts(count1++))
   
   return (
+
+    notification == "" ?
+
+    (<div className='flex justify-between justify-items-center'>
+      <div className='w-[150px] ml-2'>
+        <Sidebar active="notifications"></Sidebar>
+      </div>
+
+      <div className='w-full mt-5'>
+        <h1 className='m-5 bg-[#e2dfdf] text-center py-5 text-3xl inline-block w-[900px] font-dm font-semibold'>You Don't Have a Notifications</h1>
+
+      </div>      
+    </div>)
+    
+    :
     <div className='flex justify-between justify-items-center'>
-        <>
-        <div className='w-[150px] ml-2'>
-          <Sidebar active="notifications"></Sidebar>
-        </div>
-       
-        <div className='w-full mt-5'>
+
+      <div className='w-[150px] ml-2'>
+        <Sidebar active="notifications"></Sidebar>
+      </div>
+
+      <div className='w-full mt-5'>
         {notification.map((item)=>(
-          <div className='flex bg-[#e2dfdf] inline-block w-[900px] mt-2 px-6 mx-5 py-4  rounded-md border border-solid border-[#bdb9b9]'>
-            <p className='text-3xl font-dm font-semibold mt-1 mr-5'><IoIosNotifications></IoIosNotifications></p>
-            <p className='text-2xl font-dm font-semibold'>{item.notification}</p>
+          <div className='flex bg-[#e2dfdf] inline-block w-[900px] mt-2 px-6 mx-5 py-4     rounded-md border border-solid border-[#bdb9b9]'>
+          <p className='text-3xl font-dm font-semibold mt-1 mr-5'><IoIosNotifications></IoIosNotifications></p>
+          <p className='text-2xl font-dm font-semibold'>{item.notification}</p>
 
           </div>
         ))}
-        </div>      
-          
-        </>        
+
+      </div>           
     </div>
+
+   
   )
 }
 

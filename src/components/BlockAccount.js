@@ -55,7 +55,16 @@ const BlockAccount = () => {
 
 
   return (
-    <div className='shadow-lg w-full relative border mt-3 px-5 py-3 rounded-lg h-[459px] overflow-y-scroll'>
+
+    block == "" ?
+    (<div className='shadow-lg w-full relative border mt-3 px-5 py-3 rounded-lg h-[459px] overflow-y-scroll'>
+        <h3 className='text-xl font-semibold font-popin text-black'>Block Account</h3>
+        <BsThreeDotsVertical className='absolute top-[15px] right-2'></BsThreeDotsVertical>
+      
+        <h3 className='text-sm bg-loginbtn font-semibold font-popin text-white py-3 px-2 text-center rounded mt-5'>You don't have any blocked friends</h3>
+    </div>)
+     :
+     (<div className='shadow-lg w-full relative border mt-3 px-5 py-3 rounded-lg h-[459px] overflow-y-scroll'>
         <h3 className='text-xl font-semibold font-popin text-black'>Block Account</h3>
         <BsThreeDotsVertical className='absolute top-[15px] right-2'></BsThreeDotsVertical>
       
@@ -85,7 +94,8 @@ const BlockAccount = () => {
 
             </div>
         ))}
-    </div>
+    </div>)
+    
 )
 }
 
