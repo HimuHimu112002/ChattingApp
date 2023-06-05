@@ -54,22 +54,22 @@ const Home = () => {
 
         <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-x-4'>
 
-        <div className='w-full ml-3'>
+        <div className='w-full w-auto ml-3'>
           {/* <Search></Search> */}
           {/* <GroupList></GroupList> */}
           <FriendRequest></FriendRequest>
         </div>
 
-        <div className='w-full mx-4'>
+        <div className='w-full w-auto mx-4'>
           <Friends></Friends>
           {/* <MyGroups></MyGroups> */}
         </div>
 
-        <div className='w-full mx-4'>
+        <div className='w-full w-auto mx-4'>
           <UserList></UserList>
           {/* <BlockAccount></BlockAccount> */}
         </div>
-        <div className='w-full mx-4'>
+        <div className='w-full w-auto mx-4'>
           {/* <UserList></UserList> */}
           <BlockAccount></BlockAccount>
         </div>

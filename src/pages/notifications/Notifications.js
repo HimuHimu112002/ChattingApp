@@ -41,7 +41,7 @@ const Notifications = () => {
       </div>
 
       <div className='w-full mt-5'>
-        <h1 className='m-5 bg-[#e2dfdf] text-center py-5 text-3xl inline-block w-[900px] font-dm font-semibold'>You Don't Have a Notifications</h1>
+        <h1 className='m-5 bg-[#e2dfdf] text-center py-5 text-3xl inline-block w-[900px] font-dm font-semibold w-auto px-3'>You Don't Have a Notifications</h1>
 
       </div>      
     </div>)

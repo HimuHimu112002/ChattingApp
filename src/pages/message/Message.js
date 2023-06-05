@@ -244,13 +244,13 @@ return (
 
         <div className='grid grid-cols-2 sm:grid-cols-1 md:grid-cols-2'>
 
-        <div className='w-[400px] h-2/4 mx-4 pl-2'>
+        <div className='w-[400px] sm:w-auto h-2/4 mx-4 pl-2'>
           {/* <GroupList></GroupList> */}
           {/* <MyGroups></MyGroups> */}
           <Friends></Friends>
         </div>
 
-        <div className='w-[500px] h-[600px] shadow-md  mt-4 relative'>
+        <div className='w-[500px] h-[600px] w-auto shadow-md  mt-4 relative'>
 
           <div className='mb-4 flex gap-x-3 border-b border-solid border-[#ecebeb] px-3 py-3 '>
             <div className='relative'>
