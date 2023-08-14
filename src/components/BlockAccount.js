@@ -71,7 +71,7 @@ const BlockAccount = () => {
         {block.map(item=>(
             <div className='flex gap-x-5 items-center border-b border-solid border-loginbtn pb-3.5'>
             <div>
-                <img className='w-[70px] h-[70px] rounded-full mt-4' src={data.photoURL}/>
+                <img className='hidden lg:block md:w-[70px] md:h-[70px] rounded-full mt-4' src={data.photoURL}/>
             </div>
 
             <div className='text-left'>

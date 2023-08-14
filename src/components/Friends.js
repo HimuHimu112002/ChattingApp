@@ -97,7 +97,7 @@ const Friends = () => {
   return (
 
     friend == "" ?
-    (<div className='shadow-lg w-full relative border mt-3 px-5 py-3 rounded-lg h-[431px] overflow-y-scroll'>
+    (<div className='shadow-lg max:w-auto relative border mt-3 px-5 py-3 rounded-lg h-[431px] overflow-y-scroll'>
     <h3 className='text-xl font-semibold font-popin text-black'>Friends</h3>
     <BsThreeDotsVertical className='absolute top-[15px] right-2'></BsThreeDotsVertical>
 
@@ -112,7 +112,7 @@ const Friends = () => {
             {friend.map(item=>(
             <div onClick={()=>handleSingleSms(item)} className='flex gap-x-5 items-center border-b border-solid border-loginbtn pb-3.5 cursor-pointer'>
                 <div>
-                    <img className='w-[70px] h-[70px] rounded-full mt-4' src={data.photoURL}></img>
+                    <img className='hidden lg:block sm:w-[0px] xl:w-[70px] xl:h-[70px] rounded-full mt-4 ' src={data.photoURL}></img>
                 </div>
 
                 <div className='text-left'>

@@ -236,21 +236,21 @@ const Message = () => {
   }
  
 return (
-    <div className='flex justify-items-center'>
+    <div className='lg:flex justify-items-center'>
         <>
         <div className='w-[150px] ml-2'>
           <Sidebar active="usermsg"></Sidebar>
         </div>
 
-        <div className='grid grid-cols-2 sm:grid-cols-1 md:grid-cols-2'>
+        <div className='xl:grid xl:grid-cols-2 sm:grid-cols-1 md:grid-cols-2'>
 
-        <div className='w-[400px] sm:w-auto h-2/4 mx-4 pl-2'>
+        <div className='max:w-auto sm:w-auto h-2/4 mx-4 pl-2'>
           {/* <GroupList></GroupList> */}
-          {/* <MyGroups></MyGroups> */}
+          {/* <MyGroups></MyGroups> shadow-lg max:w-auto relative border mt-3 px-5 py-3 rounded-lg h-[431px] overflow-y-scroll */}
           <Friends></Friends>
         </div>
 
-        <div className='w-[500px] h-[600px] w-auto shadow-md  mt-4 relative'>
+        <div className='shadow-lg rounded-lg max:w-auto mx-5 h-[615px] sm:w-auto shadow-md  mt-4 relative pl-2'>
 
           <div className='mb-4 flex gap-x-3 border-b border-solid border-[#ecebeb] px-3 py-3 '>
             <div className='relative'>
@@ -279,7 +279,7 @@ return (
                     </div>
                     <p className='font-popin font-normal text-[12px] text-[#c2c0c0] mt-1'>Today 8:02 pm</p>
                   </div>): item.image ? (<div className='mr-2 mt-4 text-right'>
-                    <div className='inline-block w-44'>
+                    <div className=' mr-2 mt-4 text-right w-2.5'>
                       <ModalImage
                       small={item.image}
                       large={item.image}
@@ -303,7 +303,7 @@ return (
                 </div>)
                 : 
                 (<div className='mr-2 mb-4'>
-                  <div className='shadow-md inline-block w-44'>
+                  <div className='mr-2 mt-4 text-right w-2.5'>
                   <ModalImage
                     small={item.image}
                     large={item.image}
@@ -350,10 +350,10 @@ return (
           {activeName.status === "single"&&
           <div className='w-full text-center py-6 flex justify-around'>
               
-              <div className='relative ml-3'>
+              <div className='relative ml-3 px-2'>
               {/* audio section */}
               {audio && 
-                <div className='absolute top-[-110px] left-[20px] z-50 bg-red-400 px-2 py-2 rounded-md'>
+                <div className='sm:w-[50px] lg:px-0 absolute top-[px] left-[50px] z-50 bg-red-400 px-2 py-2 rounded-md'>
 
                   {audio && <audio controls src={audio}></audio>} 
                   <button onClick={handleaudiosend} className='bg-heading text-white px-2.5 py-1 rounded-md hover:bg-green-600 duration-300 text-sm mr-1'>send</button>
@@ -371,23 +371,30 @@ return (
                 
                 <BsEmojiExpressionless onClick={()=>setemoji(!emoji)} className='absolute top-2.5 right-10 text-black cursor-pointer'></BsEmojiExpressionless>
                 {emoji && <div className="absolute bottom-12 left-4"><EmojiPicker onEmojiClick={(emoji)=>handleemojisend(emoji)}/></div>}
+
+                <MdInsertPhoto className='absolute top-2.5 right-4 text-black cursor-pointer'></MdInsertPhoto>
                 
+                <div>
                 <label>
                   <input onChange={handleImageUpload} className='hidden' type="file"></input>
-                  <MdInsertPhoto className='absolute top-2.5 right-4 text-black cursor-pointer'></MdInsertPhoto>
+                  
                 </label>
+
+                <button onClick={handleSmsSend} className='mt-2 bg-heading text-white px-6 py-1 rounded-md hover:bg-green-600 duration-500 text-xl'><BiSend></BiSend></button>
+                </div>
+
               </div>
                 <p className='ml-10 absolute top-10 text-red-500 font-dm font-semibold px-6 py-1 rounded-md'>{smserr}</p>
                 {/* input section  end*/}
 
                 {/* audio section */}
-                <label className=''>
+                <label>
                   <AudioRecorder onRecordingComplete={(blob) => addAudioElement(blob)} />
                 </label>
                 {/* audio section */}
 
-                <IoIosVideocam className='absolute bottom-9 left-2 text-black cursor-pointer'></IoIosVideocam>
-              <button onClick={handleSmsSend} className='bg-heading text-white px-6 py-1 rounded-md hover:bg-green-600 duration-500 text-xl'><BiSend></BiSend></button>
+                {/* <IoIosVideocam className='absolute bottom-9 left-2 text-black cursor-pointer'></IoIosVideocam> */}
+              
               
             </div> 
             

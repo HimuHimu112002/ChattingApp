@@ -44,35 +44,36 @@ const Home = () => {
   
   return (
 
-    <div className='flex justify-items-center'>
+    <div className='lg:flex justify-items-center'>
         {verify ? 
         <>
 
-        <div className='w-[150px] ml-2'>
+        <div className='sm:flex-row-reverse w-[150px] ml-2'>
           <Sidebar active="home"></Sidebar>
         </div>
 
         <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-x-4'>
 
-        <div className='w-full w-auto ml-3'>
-          {/* <Search></Search> */}
-          {/* <GroupList></GroupList> */}
-          <FriendRequest></FriendRequest>
-        </div>
+          <div className='w-full w-auto mx-4'>
+            {/* <Search></Search> */}
+            {/* <GroupList></GroupList> */}
+            <FriendRequest></FriendRequest>
+          </div>
 
-        <div className='w-full w-auto mx-4'>
-          <Friends></Friends>
-          {/* <MyGroups></MyGroups> */}
-        </div>
+          <div className='w-full w-auto mx-4'>
+            <Friends></Friends>
+            {/* <MyGroups></MyGroups> */}
+          </div>
 
-        <div className='w-full w-auto mx-4'>
-          <UserList></UserList>
-          {/* <BlockAccount></BlockAccount> */}
-        </div>
-        <div className='w-full w-auto mx-4'>
-          {/* <UserList></UserList> */}
-          <BlockAccount></BlockAccount>
-        </div>
+          <div className='w-full w-auto mx-4'>
+            <UserList></UserList>
+            {/* <BlockAccount></BlockAccount> */}
+          </div>
+
+          <div className='w-full w-auto mx-4'>
+            {/* <UserList></UserList> */}
+            <BlockAccount></BlockAccount>
+          </div>
         </div>
 
         </>

@@ -36,13 +36,13 @@ const Setting = () => {
     })
   }
   return (
-    <div className='flex justify-between justify-items-center'>
+    <div className='lg:flex justify-between justify-items-center'>
         
         <div className='w-[150px] ml-2'>
           <Sidebar active="setting"></Sidebar>
         </div>
 
-        <div className='w-[427px]'>
+        <div className='sm:w-auto px-3 lg:w-[427px]'>
         
         <div onClick={handleLogout} className='cursor-pointer text-center mt-48 relative z-[1] after:z-[-1] after:bg-none after:w-[107px] after:h-[75px] after:content-[""] after:absolute after:top-[-14px] after:left-0 after:rounded-tl-md after:rounded-bl-md before:w-[8px] before:h-[99px] before:content-[""] before:bg-none before:absolute before:top-[-14px] before:right-[-36px] before:rounded-tl-md before:rounded-bl-md shadow-lg py-5'>
         <h2 className='text-2xl mb-3 text-center'>Logout Here</h2> <CiLogin className='text-5xl text-[#000] mx-auto'></CiLogin>
