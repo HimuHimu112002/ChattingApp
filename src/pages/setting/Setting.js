@@ -49,8 +49,8 @@ const Setting = () => {
         </div>
         </div>
 
-        <div className='w-[344px]'></div>
-        <div className='w-[344px]'></div>
+        <div className='sm:w-[0px] lg:w-[344px]'></div>
+        <div className='sm:w-[0px] w-[344px]'></div>
               
     </div>
   )
