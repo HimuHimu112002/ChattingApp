@@ -48,7 +48,7 @@ const Home = () => {
         {verify ? 
         <>
 
-        <div className='sm:flex-row-reverse w-[150px] ml-2'>
+        <div className='w-[150px] ml-2'>
           <Sidebar active="home"></Sidebar>
         </div>
 

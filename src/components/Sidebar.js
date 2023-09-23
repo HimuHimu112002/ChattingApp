@@ -121,7 +121,7 @@ const Sidebar = ({active}) => {
   let [dartt, setdartt] = useState(false)
 
   return (
-    <div className=' w-full bg-heading rounded-3xl h-[954px] sm:flex flex-wrap-reverse'>
+    <div className='w-full bg-heading rounded-3xl h-[954px]'>
     <ToastContainer position="top-right" theme="dark"/>
       <div className='p-9'>
         <div className='w-[90px] h-[90px] rounded-full relative group'>

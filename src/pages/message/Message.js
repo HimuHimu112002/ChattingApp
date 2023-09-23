@@ -142,16 +142,17 @@ const Message = () => {
 
   // gallery image send start 
   let handleImageUpload = (e)=>{
+    // console.log("himu")
     const storageRef = storageref(storage, e.target.files[0].name);
 
     const uploadTask = uploadBytesResumable(storageRef, e.target.files[0]);
     uploadTask.on('state_changed', 
       (snapshot) => {
         const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-        console.log('Upload is ' + progress + '% done');
+        // console.log('Upload is ' + progress + '% done');
       }, 
     (error) => {
-      console.log(error)
+      // console.log(error)
     },() => {
     getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
       set(push(ref(db, "singlesms")),{
@@ -204,7 +205,6 @@ const Message = () => {
 
   // enter press
   let handleEnterPress= (e)=>{
-    //console.log(e.key)
     if(e.key == "Enter"){
       if(!sms){
         setsmserr("Please write text somthing .")
@@ -279,7 +279,7 @@ return (
                     </div>
                     <p className='font-popin font-normal text-[12px] text-[#c2c0c0] mt-1'>Today 8:02 pm</p>
                   </div>): item.image ? (<div className='mr-2 mt-4 text-right'>
-                    <div className=' mr-2 mt-4 text-right w-2.5'>
+                    <div className=' mr-2 mt-4 text-right w-50'>
                       <ModalImage
                       small={item.image}
                       large={item.image}
@@ -353,7 +353,7 @@ return (
               <div className='relative ml-3 px-2'>
               {/* audio section */}
               {audio && 
-                <div className='sm:w-[50px] lg:px-0 absolute top-[px] left-[50px] z-50 bg-red-400 px-2 py-2 rounded-md'>
+                <div className=' absolute top-[-130px] left-[0px] z-50 bg-red-400 px-2 py-2 rounded-md'>
 
                   {audio && <audio controls src={audio}></audio>} 
                   <button onClick={handleaudiosend} className='bg-heading text-white px-2.5 py-1 rounded-md hover:bg-green-600 duration-300 text-sm mr-1'>send</button>
@@ -372,16 +372,16 @@ return (
                 <BsEmojiExpressionless onClick={()=>setemoji(!emoji)} className='absolute top-2.5 right-10 text-black cursor-pointer'></BsEmojiExpressionless>
                 {emoji && <div className="absolute bottom-12 left-4"><EmojiPicker onEmojiClick={(emoji)=>handleemojisend(emoji)}/></div>}
 
-                <MdInsertPhoto className='absolute top-2.5 right-4 text-black cursor-pointer'></MdInsertPhoto>
                 
                 <div>
                 <label>
+                  <MdInsertPhoto className='absolute top-2.5 right-4 text-black cursor-pointer'></MdInsertPhoto>
                   <input onChange={handleImageUpload} className='hidden' type="file"></input>
-                  
+
                 </label>
 
-                <button onClick={handleSmsSend} className='mt-2 bg-heading text-white px-6 py-1 rounded-md hover:bg-green-600 duration-500 text-xl'><BiSend></BiSend></button>
                 </div>
+                <button onClick={handleSmsSend} className='mt-2 bg-heading text-white px-6 py-1 rounded-md hover:bg-green-600 duration-500 text-xl'><BiSend></BiSend></button>
 
               </div>
                 <p className='ml-10 absolute top-10 text-red-500 font-dm font-semibold px-6 py-1 rounded-md'>{smserr}</p>
