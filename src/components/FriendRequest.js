@@ -90,10 +90,12 @@ const FriendRequest = () => {
         
         {FriendrequestList.map((item)=>(
             <div className='flex gap-x-5 items-center border-b border-solid border-loginbtn pb-3.5'>
-            <div>
+            {/* <div>
                 <img className='w-[70px] h-[70px] rounded-full mt-4' src={data.photoURL}></img>
+            </div> */}
+            <div className='hidden md:block mt-2 px-5 py-5 rounded-full border border-1 border-green-700'>
+                <h4 className='font-popin font-semibold text-sm text-black'>{item.senderName.charAt(0)}</h4>
             </div>
-
             <div className='text-left'>
                 <h4 className='font-popin font-semibold text-sm text-black'>{item.senderName}</h4>
                 <p className='font-popin font-medium text-xs text-[#4D4D4D]'>Hello!</p>

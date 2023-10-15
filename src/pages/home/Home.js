@@ -52,25 +52,25 @@ const Home = () => {
           <Sidebar active="home"></Sidebar>
         </div>
 
-        <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-x-4'>
+        <div className='grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-x-4'>
 
-          <div className='w-full w-auto mx-4'>
+          <div className='lg:w-full sm:w-auto mx-4'>
             {/* <Search></Search> */}
             {/* <GroupList></GroupList> */}
             <FriendRequest></FriendRequest>
           </div>
 
-          <div className='w-full w-auto mx-4'>
+          <div className='lg:w-full sm:w-auto  mx-4'>
             <Friends></Friends>
             {/* <MyGroups></MyGroups> */}
           </div>
 
-          <div className='w-full w-auto mx-4'>
+          <div className='lg:w-full sm:w-auto mx-4'>
             <UserList></UserList>
             {/* <BlockAccount></BlockAccount> */}
           </div>
 
-          <div className='w-full w-auto mx-4'>
+          <div className='lg:w-full sm:w-auto mx-4'>
             {/* <UserList></UserList> */}
             <BlockAccount></BlockAccount>
           </div>

@@ -174,9 +174,9 @@ const Sidebar = ({active}) => {
       {/* profile upload section */}
       
       {imageUploadShow && 
-      <div className='z-50 w-full h-screen bg-heading absolute top-0 left-0 flex justify-center items-center'>
-          <div className='w-2/4 bg-white rounded-lg p-4'>
-              <h1 className='text-3xl font-semibold font-nonito text-black text-center mt-4'>Upload Your Profile Picture</h1>
+      <div className='z-50 w-full h-screen border absolute top-0 left-0 flex justify-center items-center'>
+          <div className='w-2/4 bg-heading rounded-lg p-4'>
+              <h1 className='text-3xl font-semibold font-nonito text-white text-center mt-4'>Upload Your Profile Picture</h1>
               {/* preview image and crop image handle */}
               {image?
               <div className='w-[90px] h-[90px] rounded-full overflow-hidden mx-auto'>

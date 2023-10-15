@@ -111,12 +111,14 @@ const Friends = () => {
 
             {friend.map(item=>(
             <div onClick={()=>handleSingleSms(item)} className='flex gap-x-5 items-center border-b border-solid border-loginbtn pb-3.5 cursor-pointer'>
-                <div>
+                {/* <div>
                     <img className='hidden lg:block sm:w-[0px] xl:w-[70px] xl:h-[70px] rounded-full mt-4 ' src={data.photoURL}></img>
+                </div> */}
+                <div className='hidden md:block mt-2 px-5 py-5 rounded-full border border-1 border-green-700'>
+                    <h4 className='font-popin font-semibold text-sm text-black'>{data.uid == item.senderId ? item.rechiverName: item.senderName.charAt(0)}</h4>
                 </div>
-
                 <div className='text-left'>
-                    <h4 className='font-popin font-semibold text-sm text-black'>{data.uid == item.senderId ? item.rechiverName:item.senderName}</h4>
+                    <h4 className='font-popin font-semibold text-sm text-black'>{data.uid == item.senderId ? item.rechiverName: item.senderName}</h4>
 
                     <div className='mx-auto flex'>
                         <button onClick={()=>handleUnFriend(item)} className='font-popin font-bold text-white text-sm bg-rebbtn px-5 py-1 rounded-md mr-1 mt-3'>Unfriend</button>

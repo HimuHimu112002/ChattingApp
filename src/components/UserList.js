@@ -125,8 +125,8 @@ const UserList = () => {
         {SearchArray.length > 0 ?
             (SearchArray.map((item)=>(
             <div className='flex gap-x-5 items-center border-b border-solid border-loginbtn pb-3.5'>
-            <div>
-            <img className=' xl:w-[70px] xl:h-[70px] rounded-full mt-4' src={data.photoURL}></img>
+            <div className='hidden md:block mt-2 px-5 py-5 rounded-md border border-1 border-green-700'>
+                <h4 className='font-popin font-semibold text-sm text-black'>{item.username.charAt(0)}</h4>
             </div>
             <div className='text-left'>
                 <h4 className='font-popin font-semibold text-sm text-black'>{item.username}</h4>
@@ -148,14 +148,11 @@ const UserList = () => {
         
         (userdata.map((item)=>(
             <div className='flex gap-x-5 items-center border-b border-solid border-loginbtn pb-3.5'>
-            <div>
-            
-            <img className='hidden lg:block md:w-[70px] md:h-[70px] rounded-full mt-4' src={data.photoURL}></img>
-            
+            <div className='hidden md:block mt-2 px-5 py-5 rounded-full border border-1 border-green-700'>
+                <h4 className='font-popin font-semibold text-sm text-black'>{item.username.charAt(0)}</h4>
             </div>
             <div className='text-left'>
-                <h4 className='font-popin font-semibold text-sm text-black'>{item.username}</h4>
-
+                <h4 className='font-popin font-semibold text-sm text-black text-capitalize'>{item.username}</h4>
                 <div className='mx-auto mt-2'>           
 
                 {BlockBack.includes(item.userid + data.uid) || BlockBack.includes(data.uid + item.userid)?(<button className='bg-rebbtn px-5 py-1 rounded-md text-white text-sm font-semibold flex'>Block</button>): 
