@@ -47,7 +47,7 @@ const Notifications = () => {
     </div>)
     
     :
-    <div className='lg:flex justify-between justify-items-center'>
+    <div className='lg:flex'>
 
       <div className='w-[150px] ml-2'>
         <Sidebar active="notifications"></Sidebar>
@@ -55,7 +55,7 @@ const Notifications = () => {
 
       <div className='w-auto mt-5'>
         {notification.map((item)=>(
-          <div className='flex bg-[#e2dfdf] inline-block w-[300px] mt-2 px-6 mx-5 py-4 rounded-md border border-solid border-[#bdb9b9]'>
+          <div className='flex bg-[#e2dfdf] inline-block w-[450px] mt-2 px-6 mx-5 py-4 rounded-md border border-solid border-[#bdb9b9]'>
           <p className='text-3xl font-dm font-semibold mt-1 mr-5'><IoIosNotifications></IoIosNotifications></p>
           <p className='text-2xl font-dm font-semibold'>{item.notification}</p>
 
