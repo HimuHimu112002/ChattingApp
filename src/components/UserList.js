@@ -127,7 +127,7 @@ const UserList = () => {
             <div className='flex gap-x-5 items-center border-b border-solid border-loginbtn pb-3.5'>
             <div className='hidden md:block mt-2 px-5 py-5 rounded-md border border-1 border-green-700'>
                 <h4 className='font-popin font-semibold text-sm text-black'>{item.username.charAt(0)}</h4>
-            </div>
+            </div> 
             <div className='text-left'>
                 <h4 className='font-popin font-semibold text-sm text-black'>{item.username}</h4>
 
