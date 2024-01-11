@@ -65,7 +65,7 @@ const BlockAccount = () => {
     </div>)
      :
      (<div className='shadow-lg w-full relative border mt-3 px-5 py-3 rounded-lg h-[459px] overflow-y-scroll'>
-        <h3 className='text-xl font-semibold font-popin text-black'>Block Account</h3>
+        <h3 className='text-xl font-semibold font-popin text-black border-b border-solid border-black-300 mb-4'>Block Account</h3>
         <BsThreeDotsVertical className='absolute top-[15px] right-2'></BsThreeDotsVertical>
       
         {block.map(item=>(

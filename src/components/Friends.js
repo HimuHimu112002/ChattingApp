@@ -106,7 +106,7 @@ const Friends = () => {
     :
 
     (<div className='shadow-lg w-full relative border mt-3 px-5 py-3 rounded-lg h-[431px] overflow-y-scroll'>
-        <h3 className='text-xl font-semibold font-popin text-black'>Friends</h3>
+        <h3 className='text-xl font-semibold font-popin text-black border-b border-solid border-black-300 mb-4'>Friends</h3>
         <BsThreeDotsVertical className='absolute top-[15px] right-2'></BsThreeDotsVertical>
 
             {friend.map(item=>(
@@ -114,9 +114,9 @@ const Friends = () => {
                 {/* <div>
                     <img className='hidden lg:block sm:w-[0px] xl:w-[70px] xl:h-[70px] rounded-full mt-4 ' src={data.photoURL}></img>
                 </div> */}
-                <div className='hidden md:block mt-2 px-5 py-5 rounded-full border border-1 border-green-700'>
+                {/* <div className='hidden md:block mt-2 px-5 py-5 rounded-full border border-1 border-green-700'>
                     <h4 className='font-popin font-semibold text-sm text-black'>{data.uid == item.senderId ? item.rechiverName: item.senderName.charAt(0)}</h4>
-                </div>
+                </div> */}
                 <div className='text-left'>
                     <h4 className='font-popin font-semibold text-sm text-black'>{data.uid == item.senderId ? item.rechiverName: item.senderName}</h4>
 

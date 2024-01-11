@@ -85,7 +85,7 @@ const FriendRequest = () => {
     </div>)
     :
     (<div className='shadow-lg max:w-auto relative border mt-3 px-5 py-3 rounded-lg h-[431px] overflow-y-scroll'>
-        <h3 className='text-xl font-semibold font-popin text-black'>Friend  Request</h3>
+        <h3 className='text-xl font-semibold font-popin text-black border-b border-solid border-black-300 mb-4'>Friend  Request</h3>
         <BsThreeDotsVertical className='absolute top-[15px] right-2'></BsThreeDotsVertical>
         
         {FriendrequestList.map((item)=>(
@@ -93,9 +93,9 @@ const FriendRequest = () => {
             {/* <div>
                 <img className='w-[70px] h-[70px] rounded-full mt-4' src={data.photoURL}></img>
             </div> */}
-            <div className='hidden md:block mt-2 px-5 py-5 rounded-full border border-1 border-green-700'>
+            {/* <div className='hidden md:block mt-2 px-5 py-5 rounded-full border border-1 border-green-700'>
                 <h4 className='font-popin font-semibold text-sm text-black'>{item.senderName.charAt(0)}</h4>
-            </div>
+            </div> */}
             <div className='text-left'>
                 <h4 className='font-popin font-semibold text-sm text-black'>{item.senderName}</h4>
                 <p className='font-popin font-medium text-xs text-[#4D4D4D]'>Hello!</p>
